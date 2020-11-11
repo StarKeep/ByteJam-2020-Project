@@ -173,12 +173,18 @@ namespace US_Codestitution
 				correctScore += 1;
 				ScoreCount1.Text = correctScore.ToString();
 				timerBar.Value = Math.Min(timerBar.Maximum, timerBar.Value + 100);
+
+				if (correctScore >= 30)
+				{
+					MessageBox.Show( "You met your quota!", "Winner Is You!", MessageBoxButtons.OK, MessageBoxIcon.Exclamation );
+					timerBar.Value = 0;
+				}
 			}
 			else
 			{
 				wrongScore += 1;
 				ScoreCount2.Text = wrongScore.ToString();
-				timerBar.Value = Math.Max(1, timerBar.Value - 500);
+				timerBar.Value = Math.Max(1, timerBar.Value - 200);
 			}
 		}
 
@@ -265,5 +271,5 @@ namespace US_Codestitution
 			ReFill();
 			timerBar.Value = 3000;
 		}
-    }
+	}
 }

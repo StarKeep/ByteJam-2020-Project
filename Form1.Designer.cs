@@ -60,12 +60,14 @@
             this.CityLable = new System.Windows.Forms.Label();
             this.FirstNameLable = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.button2 = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
             this.timerBar = new System.Windows.Forms.ProgressBar();
+            this.lblQuota = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.InputPicture)).BeginInit();
             this.Vote.SuspendLayout();
             this.SSIDBox.SuspendLayout();
@@ -380,16 +382,27 @@
             // groupBox1
             // 
             this.groupBox1.BackColor = System.Drawing.SystemColors.ButtonFace;
+            this.groupBox1.Controls.Add(this.lblQuota);
+            this.groupBox1.Controls.Add(this.label4);
             this.groupBox1.Controls.Add(this.label3);
             this.groupBox1.Controls.Add(this.label2);
             this.groupBox1.Controls.Add(this.ScoreCount2);
             this.groupBox1.Controls.Add(this.ScoreCount1);
             this.groupBox1.Location = new System.Drawing.Point(808, 37);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(157, 77);
+            this.groupBox1.Size = new System.Drawing.Size(157, 100);
             this.groupBox1.TabIndex = 12;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Score:";
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(31, 70);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(39, 13);
+            this.label4.TabIndex = 9;
+            this.label4.Text = "Quota:";
             // 
             // label3
             // 
@@ -446,6 +459,15 @@
             this.timerBar.Size = new System.Drawing.Size(421, 23);
             this.timerBar.Style = System.Windows.Forms.ProgressBarStyle.Continuous;
             this.timerBar.TabIndex = 14;
+            // 
+            // lblQuota
+            // 
+            this.lblQuota.AutoSize = true;
+            this.lblQuota.Location = new System.Drawing.Point(84, 70);
+            this.lblQuota.Name = "lblQuota";
+            this.lblQuota.Size = new System.Drawing.Size(19, 13);
+            this.lblQuota.TabIndex = 10;
+            this.lblQuota.Text = "30";
             // 
             // Form1
             // 
@@ -522,6 +544,8 @@
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.ProgressBar timerBar;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Label lblQuota;
     }
 }
 
