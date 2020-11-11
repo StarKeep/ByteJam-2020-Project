@@ -88,6 +88,8 @@
             this.YesVote.TabIndex = 0;
             this.YesVote.UseVisualStyleBackColor = false;
             this.YesVote.Click += new System.EventHandler(this.YesVote_Click);
+            this.YesVote.MouseLeave += new System.EventHandler(this.YesVoteLeave);
+            this.YesVote.MouseHover += new System.EventHandler(this.YesVoteHover);
             // 
             // NoVote
             // 
@@ -98,6 +100,8 @@
             this.NoVote.TabIndex = 1;
             this.NoVote.UseVisualStyleBackColor = true;
             this.NoVote.Click += new System.EventHandler(this.NoVote_Click);
+            this.NoVote.MouseLeave += new System.EventHandler(this.NoVoteLeave);
+            this.NoVote.MouseHover += new System.EventHandler(this.NoVoteHover);
             // 
             // contextMenuStrip1
             // 
@@ -192,7 +196,7 @@
             this.SSIDFirstNameLable.Size = new System.Drawing.Size(54, 13);
             this.SSIDFirstNameLable.TabIndex = 0;
             this.SSIDFirstNameLable.Text = "Full Name";
-            this.SSIDFirstNameLable.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.SSIDFirstNameLable.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             // 
             // IDBox
             // 
@@ -382,15 +386,15 @@
             // groupBox1
             // 
             this.groupBox1.BackColor = System.Drawing.SystemColors.ButtonFace;
-            this.groupBox1.Controls.Add(this.lblQuota);
-            this.groupBox1.Controls.Add(this.label4);
+            this.groupBox1.Controls.Add( this.lblQuota );
+            this.groupBox1.Controls.Add( this.label4 );
             this.groupBox1.Controls.Add(this.label3);
             this.groupBox1.Controls.Add(this.label2);
             this.groupBox1.Controls.Add(this.ScoreCount2);
-            this.groupBox1.Controls.Add(this.ScoreCount1);
-            this.groupBox1.Location = new System.Drawing.Point(808, 37);
+            this.groupBox1.Controls.Add( this.ScoreCount1 );
+            this.groupBox1.Location = new System.Drawing.Point( 808, 37 );
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(157, 100);
+            this.groupBox1.Size = new System.Drawing.Size( 157, 100 );
             this.groupBox1.TabIndex = 12;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Score:";
@@ -398,9 +402,9 @@
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(31, 70);
+            this.label4.Location = new System.Drawing.Point( 31, 70 );
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(39, 13);
+            this.label4.Size = new System.Drawing.Size( 39, 13 );
             this.label4.TabIndex = 9;
             this.label4.Text = "Quota:";
             // 
@@ -409,9 +413,9 @@
             this.label3.AutoSize = true;
             this.label3.Location = new System.Drawing.Point(28, 42);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(42, 13);
+            this.label3.Size = new System.Drawing.Size(52, 13);
             this.label3.TabIndex = 8;
-            this.label3.Text = "Wrong:";
+            this.label3.Text = "Incorrect:";
             // 
             // label2
             // 
@@ -431,41 +435,44 @@
             this.groupBox2.Size = new System.Drawing.Size(233, 96);
             this.groupBox2.TabIndex = 13;
             this.groupBox2.TabStop = false;
-            this.groupBox2.Text = "groupBox2";
             // 
             // button2
             // 
             this.button2.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("button2.BackgroundImage")));
             this.button2.Location = new System.Drawing.Point(121, 29);
             this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(95, 50);
+            this.button2.Size = new System.Drawing.Size(75, 50);
             this.button2.TabIndex = 1;
             this.button2.UseVisualStyleBackColor = true;
+            this.button2.MouseLeave += new System.EventHandler(this.Mute_Leave);
+            this.button2.MouseHover += new System.EventHandler(this.Mute_Hover);
             // 
             // button1
             // 
             this.button1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("button1.BackgroundImage")));
             this.button1.Location = new System.Drawing.Point(24, 29);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(91, 50);
+            this.button1.Size = new System.Drawing.Size(75, 50);
             this.button1.TabIndex = 0;
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.reset_click);
+            this.button1.MouseLeave += new System.EventHandler(this.Reset_Leave);
+            this.button1.MouseHover += new System.EventHandler(this.Reset_Hover);
             // 
             // timerBar
             // 
-            this.timerBar.Location = new System.Drawing.Point(0, 299);
+            this.timerBar.Location = new System.Drawing.Point( 0, 299 );
             this.timerBar.Name = "timerBar";
-            this.timerBar.Size = new System.Drawing.Size(421, 23);
+            this.timerBar.Size = new System.Drawing.Size( 421, 23 );
             this.timerBar.Style = System.Windows.Forms.ProgressBarStyle.Continuous;
             this.timerBar.TabIndex = 14;
             // 
             // lblQuota
             // 
             this.lblQuota.AutoSize = true;
-            this.lblQuota.Location = new System.Drawing.Point(84, 70);
+            this.lblQuota.Location = new System.Drawing.Point( 84, 70 );
             this.lblQuota.Name = "lblQuota";
-            this.lblQuota.Size = new System.Drawing.Size(19, 13);
+            this.lblQuota.Size = new System.Drawing.Size( 19, 13 );
             this.lblQuota.TabIndex = 10;
             this.lblQuota.Text = "30";
             // 
@@ -484,7 +491,7 @@
             this.Controls.Add(this.SSIDBox);
             this.Controls.Add(this.IDBox);
             this.Controls.Add(this.Vote);
-            this.Controls.Add(this.timerBar);
+            this.Controls.Add( this.timerBar );
             this.DoubleBuffered = true;
             this.Name = "Form1";
             this.Text = "Form1";

@@ -271,5 +271,45 @@ namespace US_Codestitution
 			ReFill();
 			timerBar.Value = 3000;
 		}
+
+		private void YesVoteHover( object sender, EventArgs e )
+		{
+			YesVote.BackgroundImage = Image.FromFile( $"{Environment.GetFolderPath( Environment.SpecialFolder.ApplicationData )}\\ByteJam\\pics\\Approve_Button_Push.png" );
+		}
+
+		private void YesVoteLeave( object sender, EventArgs e )
+		{
+			YesVote.BackgroundImage = Image.FromFile( $"{Environment.GetFolderPath( Environment.SpecialFolder.ApplicationData )}\\ByteJam\\pics\\Approve_Button.png" );
+		}
+
+		private void NoVoteHover( object sender, EventArgs e )
+		{
+			NoVote.BackgroundImage = Image.FromFile( $"{Environment.GetFolderPath( Environment.SpecialFolder.ApplicationData )}\\ByteJam\\pics\\Deny_Button_Push.png" );
+		}
+
+		private void NoVoteLeave( object sender, EventArgs e )
+		{
+			NoVote.BackgroundImage = Image.FromFile( $"{Environment.GetFolderPath( Environment.SpecialFolder.ApplicationData )}\\ByteJam\\pics\\Deny_Button.png" );
+		}
+
+		private void Reset_Hover( object sender, EventArgs e )
+		{
+			button1.BackgroundImage = Image.FromFile( $"{Environment.GetFolderPath( Environment.SpecialFolder.ApplicationData )}\\ByteJam\\pics\\Reset_Button_Push2.png" );
+		}
+
+		private void Reset_Leave( object sender, EventArgs e )
+		{
+			button1.BackgroundImage = Image.FromFile( $"{Environment.GetFolderPath( Environment.SpecialFolder.ApplicationData )}\\ByteJam\\pics\\Reset_Button2.png" );
+		}
+
+		private void Mute_Hover( object sender, EventArgs e )
+		{
+			button2.BackgroundImage = Image.FromFile( $"{Environment.GetFolderPath( Environment.SpecialFolder.ApplicationData )}\\ByteJam\\pics\\Sound_Button_Push.png" );
+		}
+
+		private void Mute_Leave( object sender, EventArgs e )
+		{
+			button2.BackgroundImage = Image.FromFile( $"{Environment.GetFolderPath( Environment.SpecialFolder.ApplicationData )}\\ByteJam\\pics\\Sound_Button.png" );
+		}
 	}
 }
