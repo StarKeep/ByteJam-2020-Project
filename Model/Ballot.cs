@@ -51,7 +51,7 @@ namespace ByteJamObjects
             FirstName = row.Field<string>("BFirstName");
             LastName = row.Field<string>("BLastName");
             SSID = row.Field<string>("BSSID");
-            City = row.Field<string>("BState");
+            City = row.Field<string>("BCity");
             State = row.Field<string>("BState");
             ZipCode = row.Field<string>("BZip");
             AddressLine1 = row.Field<string>("BAddressLine1");

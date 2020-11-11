@@ -65,6 +65,7 @@
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.button2 = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
+            this.timerBar = new System.Windows.Forms.ProgressBar();
             ((System.ComponentModel.ISupportInitialize)(this.InputPicture)).BeginInit();
             this.Vote.SuspendLayout();
             this.SSIDBox.SuspendLayout();
@@ -383,7 +384,7 @@
             this.groupBox1.Controls.Add(this.label2);
             this.groupBox1.Controls.Add(this.ScoreCount2);
             this.groupBox1.Controls.Add(this.ScoreCount1);
-            this.groupBox1.Location = new System.Drawing.Point(852, 38);
+            this.groupBox1.Location = new System.Drawing.Point(808, 37);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(157, 77);
             this.groupBox1.TabIndex = 12;
@@ -438,6 +439,14 @@
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.reset_click);
             // 
+            // timerBar
+            // 
+            this.timerBar.Location = new System.Drawing.Point(0, 299);
+            this.timerBar.Name = "timerBar";
+            this.timerBar.Size = new System.Drawing.Size(421, 23);
+            this.timerBar.Style = System.Windows.Forms.ProgressBarStyle.Continuous;
+            this.timerBar.TabIndex = 14;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -453,6 +462,7 @@
             this.Controls.Add(this.SSIDBox);
             this.Controls.Add(this.IDBox);
             this.Controls.Add(this.Vote);
+            this.Controls.Add(this.timerBar);
             this.DoubleBuffered = true;
             this.Name = "Form1";
             this.Text = "Form1";
@@ -511,6 +521,7 @@
         private System.Windows.Forms.GroupBox groupBox2;
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.ProgressBar timerBar;
     }
 }
 

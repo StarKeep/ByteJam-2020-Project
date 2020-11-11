@@ -14,10 +14,10 @@ namespace US_Codestitution
 {
 	public partial class Form1 : Form
 	{
-
-		public int correctScore = 0;
+	 	public int correctScore = 0;
 		public int wrongScore = 0;
 
+		Timer gameTimer = new Timer();
 
 		/*public void InitializeData()
 		{
@@ -170,14 +170,15 @@ namespace US_Codestitution
 		{
 			if (userChoice == isCorrect)
 			{
-
 				correctScore += 1;
 				ScoreCount1.Text = correctScore.ToString();
+				timerBar.Value = Math.Min(timerBar.Maximum, timerBar.Value + 100);
 			}
 			else
 			{
 				wrongScore += 1;
 				ScoreCount2.Text = wrongScore.ToString();
+				timerBar.Value = Math.Max(1, timerBar.Value - 500);
 			}
 		}
 
@@ -219,21 +220,39 @@ namespace US_Codestitution
 		public Form1()
 		{
 			InitializeComponent();
+			timerBar.Maximum = 3000;
+			timerBar.Value = 3000;
+
+			gameTimer.Tick += (x1, x2) => { if ( timerBar.Value > 1 ) timerBar.Value--; else if ( timerBar.Value == 1 ) { timerBar.Value = 0; MessageBox.Show( "Game over!", "Game Over!", MessageBoxButtons.OK, MessageBoxIcon.Error ); } };
+			gameTimer.Interval = 10;
+			gameTimer.Start();
 		}
 
 		private void Form1_Load( object sender, EventArgs e )
 		{
 			InitializeData();
+			ReFill();
 		}
 		
+		private bool NotifyIfGameNotActive()
+		{
+			if (timerBar.Value == 0)
+			{
+				MessageBox.Show( "The game has not yet started, please press restart to begin.", "Game Not Started", MessageBoxButtons.OK, MessageBoxIcon.Information );
+				return true;
+			}
+			return false;
+		}
+
 		private void YesVote_Click( object sender, EventArgs e )
 		{
-			
+			if (!NotifyIfGameNotActive())
 			GetPoint(ReFill(), true);
 		}
 
         private void NoVote_Click(object sender, EventArgs e)
         {
+			if (!NotifyIfGameNotActive())
 			GetPoint(ReFill(), false);
 		}
 
@@ -243,6 +262,8 @@ namespace US_Codestitution
 			correctScore = 0;
 			ScoreCount1.Text = correctScore.ToString();
 			ScoreCount2.Text = correctScore.ToString();
+			ReFill();
+			timerBar.Value = 3000;
 		}
     }
 }
